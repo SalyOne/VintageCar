@@ -1,0 +1,40 @@
+*{
+	margin:0;
+	padding:0;
+}
+.fitScreen{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-color: red;
+	overflow: hidden;
+}
+.MyImg{display: table-cell;
+    vertical-align: middle
+}
+.MyControll{
+	background-color:#fff;
+	opacity: 1;
+	height: calc(60px * 2);
+	width: 60px;
+	position: absolute;
+	top: 50vh;
+}
+.MyArrow{
+	color: #FF0000;
+	font-size: 24px;
+	font-weight: 200;
+
+}
+.RightArrow ,.LeftArrow{
+  height: calc(60px * 2);
+  width: 60px;
+}
+.RightArrow {
+  border-bottom-right-radius: calc(60px * 2);
+  border-top-right-radius: calc(60px * 2);
+}
+.LeftArrow {
+  border-bottom-left-radius:calc(60px * 2);;
+  border-top-left-radius:calc(60px * 2);;
+}
