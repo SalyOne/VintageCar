@@ -83,19 +83,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
     <script>
     	function change(){
-	    	if (document.getElementById("Bar").classList.contains('fa-bars')) {
+    		var BarBtn=document.getElementById("Bar");
+    		var ChangeBtn=document.getElementsByClassName("logo");
+	    	if (BarBtn.classList.contains('fa-bars')) {
 				document.getElementById("Bar").classList.add('fa-times');
 
-				document.getElementById("Bar").classList.remove('fa-bars');
+				BarBtn.classList.remove('fa-bars');
 				document.getElementById("demo").style.backgroundColor = "rgba(255,255,255,0.5)";
-				document.getElementsByClassName("logo")[0].style.fill = "red";
+				ChangeBtn[0].style.fill = "red";
 			}
 			else{
-				document.getElementById("Bar").classList.add('fa-bars');
+				BarBtn.classList.add('fa-bars');
 
-				document.getElementById("Bar").classList.remove('fa-times');
+				BarBtn.classList.remove('fa-times');
 				document.getElementById("demo").style.backgroundColor = "transparent";
-				document.getElementsByClassName("logo")[0].style.fill = "white";
+				ChangeBtn[0].style.fill = "white";
 			}
 		}	
     </script>
