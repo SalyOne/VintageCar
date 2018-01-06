@@ -182,13 +182,18 @@
 }
 
 .backgroundSection{
-	background-image:url(images/trees.svg),url(images/mountine.svg);
+	background-image:/*url(images/trees.svg),*/url(images/mountine.svg);
 	height: 300px;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size:contain, cover;
-	background-position: top, bottom;
+	background-size:/*contain, */cover;
+	background-position: /*top, */bottom;
 	margin-top: 150px;
+	text-align: center;
+}
+.backgroundSection img{
+	width:80vw;
+	padding-top: 50px;
 }
 .RoadSection{
 	background-image:url(images/road.svg);
@@ -207,6 +212,7 @@
 	right: 0;
 	animation-name: BusRide;
 	animation-duration: 5s;
+	animation-iteration-count: infinite;
 }
 
 
