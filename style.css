@@ -25,7 +25,7 @@
 }
 .logo{
 	fill: #fff;
-	width: 15em;
+	width: 21em;
     transition: 1s;
     padding-top: 20px;
     padding-left: 20px;
@@ -36,7 +36,7 @@
 	border:none;
 	position: absolute;
 	right: 20px;
-	top: 30%;
+	top: 40%;
 	transform: translateY(-50%);
 }
 .navbar .login{
@@ -48,7 +48,7 @@
 	position: relative;
 	text-align: left;
 }
-#Bar{
+.Bar{
 	color: white;
 	font-size: 30px;
 }
@@ -85,17 +85,16 @@
 	width: 100%;
 	text-align: left;
 	font-family: 'Roboto Condensed', sans-serif;
-	padding-left: 15%;
+	padding-left: 20%;
 	transition: 1s;
 	position: relative;
-	top: 5%;
+	padding-top: 6%;
 }
 #collapsibleNavbar ul li{
-	font-size: 50px;
+	font-size: 64px;
 }
 #collapsibleNavbar ul li a{
 	color: #000;
-	
 }
 #navbar.open #collapsibleNavbar {
 	height: calc(100vh - 120px);
@@ -108,7 +107,7 @@
 	overflow: hidden;
 	transition: 1s;
 	position: relative;
-	left: 50%
+	left: 50%;
 	transform:translateX(-50%);
 }
 .fitScreen{
@@ -121,31 +120,34 @@
 .MyControll{
 	background-color:#fff;
 	opacity: 1;
-	height: calc(60px * 2);
-	width: 60px;
+	height: calc(70px * 2);
+	width: 70px;
 	position: absolute;
 	top: 50vh;
 }
 .MyArrow{
 	color: #FF0000;
-	font-size: 24px;
+	font-size: 28px;
 	font-weight: 200;
 }
 .RightArrow , .LeftArrow{
-  height: calc(60px * 2);
-  width: 60px;
+  height: calc(70px * 2);
+  width: 70px;
 }
 .RightArrow {
-  border-bottom-right-radius: calc(60px * 2);
-  border-top-right-radius: calc(60px * 2);
+  border-bottom-right-radius: calc(70px * 2);
+  border-top-right-radius: calc(70px * 2);
 }
 .LeftArrow {
-  border-bottom-left-radius:calc(60px * 2);;
-  border-top-left-radius:calc(60px * 2);;
+  border-bottom-left-radius:calc(70px * 2);;
+  border-top-left-radius:calc(70px * 2);;
 }
 .carousel-caption{
 	right: 2%;
 	bottom: 0%;
+}
+.sliderCaption{
+	font-size: 25px;
 }
 .SlideImg{
 	height: 100vh;
@@ -166,7 +168,6 @@
 	fill: red;
 }
 .one-tride{
-	border:1px solid black;
 	background-color: #EBE8DE;
 	box-sizing: border-box;
 	padding: 30px 0;
@@ -180,10 +181,37 @@
 	font-size: 35px;
 }
 
-.RoadSection{
-	background-image: url(images/trees.svg);
-	height: 500px;
+.backgroundSection{
+	background-image:url(images/trees.svg),url(images/mountine.svg);
+	height: 300px;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 
+	background-size:contain, cover;
+	background-position: top, bottom;
+	margin-top: 150px;
+}
+.RoadSection{
+	background-image:url(images/road.svg);
+	height: 100px;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	width: 100%;
+	/*overflow: hidden;*/
+	/*background-color: coral;*/
+}
+.Bus{
+	width: 150px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	animation-name: BusRide;
+	animation-duration: 5s;
+}
+
+
+
+@keyframes BusRide{
+	from{right: 0px;}
+	to{ right: 100vw }
 }
