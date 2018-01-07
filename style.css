@@ -85,6 +85,9 @@
 #navbar.longer .logo {
 	fill: red;
 }
+.autoriseForm{
+	position: relative;
+}
 .autoriseForm input{
 	display: block;
 	height: 30px;
@@ -92,11 +95,16 @@
 	border: 0;
 	width: 200px;
 	padding: 20px;
-	margin: 15px;
 }
 .autoriseForm input[type=submit]{
 	padding: 0;
 	background-color: lightgray;
+}
+.autoriseForm label{
+	font-size: 13px;
+	color: red;
+	text-align: left;
+
 }
 #collapsibleNavbar {
 	height: 0;
@@ -201,34 +209,33 @@
 }
 
 .backgroundSection{
-	background-image:/*url(images/trees.svg),*/url(images/mountine.svg);
-	height: 300px;
+	background-image:url(images/mountine.svg);
+	height: auto;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size:/*contain, */cover;
 	background-position: /*top, */bottom;
-	margin-top: 150px;
+	margin-top: 50px;
 	text-align: center;
 }
 .backgroundSection img{
 	width:80%;
-	height: auto;
-	padding-top: 50px; 
+	height: auto; 
 }
 .RoadSection{
 	background-image:url(images/road.svg);
 	height: 100px;
-	background-repeat: no-repeat;
-	background-position: center;
+	background-repeat: repeat-x;
+	background-position: left;
 	position: relative;
 	width: 100%;
 	/*overflow: hidden;*/
 	/*background-color: coral;*/
 }
 .Bus{
-	width: 150px;
+	width: 180px;
 	position: absolute;
-	top: 0;
+	top: -20px;
 	right: 0;
 	animation-name: BusRide;
 	animation-duration: 5s;
@@ -270,9 +277,15 @@
 	max-width: 69%;
 	order:1;
 	position: relative;
+
+
+	padding-left: 30px;
+	padding-bottom: 70px;
+	border:1px solid #DFDFDF;
+	background-color: #fff;
 }
-.ContactDiv .ContactHeader{
-	padding: 10px 15px;
+.ContactDiv .LeftContactDiv .ContactHeader{
+	padding: 25px 30px;
 	font-size: 30px;
 }
 .ContactDiv .LeftContactDiv .SocialText{
@@ -284,8 +297,10 @@
 }
 .ContactDiv ul{
 	text-align: center;
+	position: relative; 
 }
 .ContactDiv ul li{
+	position: relative;
 	list-style-type: none;
 	display: inline-block;
 	border:1px solid #000;
@@ -293,71 +308,195 @@
 	width: 30px;
 	border-radius: 50%;
 	text-align: center;
-	padding-top: 2px;
-	margin:5px;
+	margin: 5px;
 }
 .ContactDiv ul li a{
 	color: #000;
 }
-
-.RightContactDiv{
-	padding-left: 30px;
-	padding-bottom: 40px;
-	border:1px solid #DFDFDF;
-	background-color: #fff;
+.ContactDiv ul li a i{
+	margin:0 auto;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: translateY(-50%);
 }
+.RightContactDiv .ContactHeader{
+	font-size: 30px;
+	padding-top: 20px;
+	letter-spacing: 5px;
+}
+/*Form*/
+
 .RightContactDiv .ContactOne{
-	padding-left: 15px;
 	display: inline-block;
-	background-color: red;
+	position: relative;
 }
 .RightContactDiv .ContactOne input, textarea{
 	display: block;
-	position: relative;
-	left: 0;
-	padding: 0 10px ;
+	padding: 0 10px;
 	font-family: 'Roboto Condensed',sans-serif;
 	font-size: 16px;
-	outline:none;
 	width: 200px;
-	background-color: #F2F2F2;
-	outline: none;
+	outline:none;
 	border:none;
-	margin-top:15px;
+	margin-top:30px;
+	background-color: #F2F2F2;
 }
 .RightContactDiv .ContactOne input[name=name]{
 	margin-top:0;
 }
 .RightContactDiv .ContactOne input{
-	height: 35px;
+	height: 40px;
 }
 .RightContactDiv .ContactOne label{
+	display: inline-block;
+	position: absolute;
 	margin: 0;
 	color: red;
-	font-family: 'Roboto';
+	font-family: 'Roboto',sans-serif;
 	font-size: 13px;
 }
 .RightContactDiv .ContactOne textarea{
 	resize: none;
 	height: 100px;
 }
+
+
+
 .RightContactDiv .ContactSecond{
 	display: inline-block;
-	background-color: green;
 	position: absolute;
-	top: 10vh;
 	left: 20vw;
+	font-family: 'Roboto Condensed';
+	font-weight: 400;
 }
-.RightContactDiv .ContactSecond input[type=radio]{
-	height: 20px;
+.RightContactDiv .ContactSecond .ErrorLabel{
 	display: inline-block;
-	width: 50px; 
+	margin: 0;
+	color: red;
+	font-family: 'Roboto',sans-serif;
+	font-size: 13px;
 }
-.RightContactDiv .ContactSecond input[type=radio]:checked{
+
+.Radiocontainer, .checkcontainer {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+
+    font-family: "Roboto",sans-serif;
+    font-size: 18px;
+    padding-left: 29px;
+    padding-right: 20px;
+
+}
+.Radiocontainer input,.checkcontainer input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+}
+.radiomark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border:1px solid #000;
+    box-sizing: border-box;
+}
+.Radiocontainer:hover input ~ .radiomark, 
+.checkcontainer:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.checkcontainer input:checked ~ .checkmark, 
+.Radiocontainer input:checked ~ .radiomark {
+    background-color: transparent;
+}
+
+.checkmark:after,
+.radiomark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkcontainer input:checked ~ .checkmark:after,
+.Radiocontainer input:checked ~ .radiomark:after  {
+    display: block;
+}
+.Radiocontainer .radiomark:after {
+ 	top: 50%;
+ 	transform: translateY(-50%);
+	left: 0px;
+	right: 0;
+	bottom: 0;
+	margin:0 auto;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+    background-color: #000;
+}
+.ContactSecond .checkboxHeader{
+	padding-top: 30%;
+	letter-spacing: 2px;
+	font-size: 16px;
+}
+.checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+.checkcontainer .checkmark:after {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 10px;
+    height: 15px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#Send{
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+	border: none;
+	outline: none;
+	width: 70px;
+	height: 30px;
+	background-color: #000;
+	color: #fff;
+}
+.Success{
+	color: #39B54A;
+	margin-top: 10px;
+	font-size: 13px;
+	position: absolute;
+	bottom: 10px;
+	left: 30px;
 
 }
 
-
+.footer{
+	padding-top: 160px;
+	padding-bottom: 50px;
+}
+.footerContent {
+	font-family: 'Roboto',sans-serif;
+	font-size: 16px;
+	background-color: #fff;
+}
 @keyframes BusRide{
 	from{right: 0px;}
 	to{ right: 100vw }
