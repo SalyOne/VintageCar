@@ -130,8 +130,8 @@
 	</div>
 </div>
 <div class="container-fluid" id="Cont">
-	<div class="container ContactSection  text-center">
-		<div class="ContactDiv text-center clearfix ">
+	<div class="container  ContactSection  text-center" id="con">
+		<div class=" ContactDiv text-center clearfix ">
 			<div class="RightContactDiv text-left ">
 					<h2 class="text-uppercase  ContactHeader">get in touch</h2>
 					<form action="index.html" method="post">
@@ -209,6 +209,22 @@
     	$("#navbar").find('.login').click(function(){
     		$('#navbar').toggleClass('longer');
     	});
+
+    	jQuery(document).ready(function($) {
+ 			var alterClass = function() {
+    		var ww = document.body.clientWidth;
+    		if (ww < 400) {
+    			$('.ContactSection').removeClass('container');
+    			} else if (ww >= 981) {
+    			$('.ContactSection').addClass('container');
+    			};
+  			};
+  		$(window).resize(function(){
+   		alterClass();
+    	});
+  		//Fire it when the page first loads:
+  		alterClass();
+		});
     </script>
   </body>
 </html>
